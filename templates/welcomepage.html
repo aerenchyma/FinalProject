@@ -1,0 +1,14 @@
+<a href="{{ url_for('logout') }}" class= "button">Logout</a>
+<div>
+	{% for message in get_flashed_messages() %}
+	{{ message }}
+	{% endfor %}
+</div>
+
+<h1>What type of food are you looking for?</h1><br>
+<form method="POST">
+	{{ form.csrf_token }}
+	{{ form.cuisine.label }} {{ form.cuisine() }}<br>
+	{{ form.city.label }} {{ form.city() }}<i>example: 'Livingston, NJ'</i><br>
+	{{ form.submit() }}
+</form>

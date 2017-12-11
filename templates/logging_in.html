@@ -1,0 +1,14 @@
+<div>
+	{% for message in get_flashed_messages() %}
+	{{ message }}
+	{% endfor %}
+</div>
+
+<h1>Welcome!</h1>
+<h3><a href="{{ url_for('user_registration') }}">New user? Click here to create an account!</a></h3><br>
+<form method="POST">
+	{{ form.csrf_token }}
+	{{ form.email.label }} {{ form.email() }}
+	{{ form.password.label }} {{ form.password() }}
+	{{ form.submit() }}
+</form>

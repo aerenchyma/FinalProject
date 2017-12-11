@@ -1,0 +1,15 @@
+<html>
+<head>
+<a href="{{ url_for('logout') }}" class= "button">Logout</a>
+</head>
+<body>
+	<form action="{{ url_for('wishlist')}}" method="POST">
+		<h2>Which restaurants would you like to add to your WishList?</h2><br>
+		{%for d in data%}
+		<input type="checkbox" name="restaurant" value="{{d['restaurant']['name']}}">{{d['restaurant']['name']}}<br>
+		<a href= '{{d['restaurant']['url']}}' target= "_blank"> Click to view more details on {{d['restaurant']['name']}}</a><br><br>
+		{%endfor%}
+		<input type="submit" value="Add to WishList">
+</form> 
+</body>
+</html>
