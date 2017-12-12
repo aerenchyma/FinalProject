@@ -1,12 +1,12 @@
 <h1>Enter the information to register</h1><br>
 
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
 	{{ form.csrf_token }}
 	{{ form.hidden_tag() }}
 	{{ form.email.label }} {{ form.email() }}<br>
 	{{ form.username.label }} {{ form.username() }}<br>
 	{{ form.password.label }} {{ form.password() }}<br>
 	{{ form.confirm_password.label }} {{ form.confirm_password() }}<br>
-	{{ form.pro_pic.label }} {{ form.pro_pic() }}<br>
+	{{ form.file.label }} {{ form.file() }}<br>
 	{{ form.submit() }}
 </form>
